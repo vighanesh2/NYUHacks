@@ -1,6 +1,6 @@
 # NYU Hacks Arcade
 
-A collection of classic arcade games built with Next.js, TypeScript, and HTML5 Canvas.
+A collection of classic arcade games built with Next.js, TypeScript, and Three.js for 3D graphics.
 
 ## Project Structure
 
@@ -11,6 +11,10 @@ This is a monorepo containing both frontend and backend code:
 │   ├── app/              # Next.js App Router
 │   ├── components/       # React components
 │   ├── games/            # Game implementations
+│   │   ├── subway-surfers/  # Subway Surfers game + assets
+│   │   ├── squid-game/      # Squid Game + assets
+│   │   ├── mario/           # Mario game + assets
+│   │   └── pac-man/         # Pac-Man game + assets
 │   ├── lib/              # Utilities
 │   └── types/            # TypeScript types
 └── backend/              # Backend API and server
@@ -18,9 +22,10 @@ This is a monorepo containing both frontend and backend code:
 
 ## Games
 
-- 🐍 **Snake** - Classic snake game
-- 🏓 **Pong** - The original arcade classic
-- 🧩 **Tetris** - Stack blocks and clear lines
+- 🚇 **Subway Surfers** - Endless runner - dodge obstacles and collect coins!
+- 🦑 **Squid Game** - Survive the challenges inspired by the popular series!
+- 🍄 **Mario** - Classic platformer - jump, run, and collect coins!
+- 👻 **Pac-Man** - Classic maze game - eat dots and avoid ghosts!
 
 ## Getting Started
 
@@ -55,8 +60,8 @@ Backend implementation coming soon. See `backend/README.md` for details.
 
 - **Next.js 14** - React framework
 - **TypeScript** - Type safety
-- **HTML5 Canvas** - Game rendering
-- **Tailwind CSS** - Styling (via inline styles)
+- **Three.js** - 3D graphics and game rendering
+- **HTML5 Canvas** - Canvas rendering (for placeholders)
 
 ## Development Guidelines
 

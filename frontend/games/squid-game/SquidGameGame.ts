@@ -1,19 +1,22 @@
 import { BaseGame } from '../BaseGame'
 
 /**
- * Pong Game
- * Classic Pong game - bounce the ball with paddles.
+ * Squid Game
+ * Inspired by the popular series - survive the challenges!
+ * Built with Three.js for 3D graphics.
  * 
- * TODO: Implement game logic
+ * TODO: Implement game logic with Three.js
  */
-export class PongGame extends BaseGame {
+export class SquidGameGame extends BaseGame {
   init(): void {
-    // TODO: Initialize game state
+    // TODO: Initialize Three.js scene, camera, renderer
+    // TODO: Load assets from ./assets folder
     this.setState({ score: 0, level: 1, lives: 3, isPaused: false, isGameOver: false })
   }
 
   update(deltaTime: number): void {
     // TODO: Update game state
+    // TODO: Update Three.js scene objects
   }
 
   render(ctx: CanvasRenderingContext2D): void {
@@ -24,7 +27,7 @@ export class PongGame extends BaseGame {
     ctx.fillStyle = '#fff'
     ctx.font = '24px monospace'
     ctx.textAlign = 'center'
-    ctx.fillText('Pong Game', this.width / 2, this.height / 2 - 20)
+    ctx.fillText('Squid Game', this.width / 2, this.height / 2 - 20)
     ctx.font = '16px monospace'
     ctx.fillText('Coming Soon...', this.width / 2, this.height / 2 + 20)
     ctx.textAlign = 'left'

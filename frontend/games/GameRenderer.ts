@@ -1,7 +1,8 @@
 import { BaseGame } from './BaseGame'
-import { SnakeGame } from './snake/SnakeGame'
-import { PongGame } from './pong/PongGame'
-import { TetrisGame } from './tetris/TetrisGame'
+import { SubwaySurfersGame } from './subway-surfers/SubwaySurfersGame'
+import { SquidGameGame } from './squid-game/SquidGameGame'
+import { MarioGame } from './mario/MarioGame'
+import { PacManGame } from './pac-man/PacManGame'
 
 export class GameRenderer {
   private game: BaseGame | null = null
@@ -17,14 +18,17 @@ export class GameRenderer {
     const canvas = this.ctx.canvas
 
     switch (this.gameId) {
-      case 'snake':
-        this.game = new SnakeGame(canvas.width, canvas.height)
+      case 'subway-surfers':
+        this.game = new SubwaySurfersGame(canvas.width, canvas.height)
         break
-      case 'pong':
-        this.game = new PongGame(canvas.width, canvas.height)
+      case 'squid-game':
+        this.game = new SquidGameGame(canvas.width, canvas.height)
         break
-      case 'tetris':
-        this.game = new TetrisGame(canvas.width, canvas.height)
+      case 'mario':
+        this.game = new MarioGame(canvas.width, canvas.height)
+        break
+      case 'pac-man':
+        this.game = new PacManGame(canvas.width, canvas.height)
         break
       default:
         console.error(`Unknown game: ${this.gameId}`)
