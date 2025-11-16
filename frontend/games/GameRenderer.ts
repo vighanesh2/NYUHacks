@@ -121,11 +121,22 @@ export class GameRenderer {
   private gameLoop = (currentTime: number) => {
     if (!this.game) return
 
+    // Handle first frame
+    if (this.lastTime === 0) {
+      this.lastTime = currentTime
+      this.animationFrameId = requestAnimationFrame(this.gameLoop)
+      return
+    }
+
     const deltaTime = currentTime - this.lastTime
     this.lastTime = currentTime
 
+    // Cap deltaTime to prevent large jumps (max 50ms = 20 FPS minimum for smooth animations)
+    // This ensures smooth motion even if the browser tab was inactive
+    const cappedDeltaTime = Math.min(deltaTime, 50)
+
     // Update game state
-    this.game.update(deltaTime)
+    this.game.update(cappedDeltaTime)
 
     // Render game
     if (this.gameId === 'squid-game') {

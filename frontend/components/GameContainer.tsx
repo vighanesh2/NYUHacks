@@ -72,8 +72,8 @@ export function GameContainer({ gameId }: GameContainerProps) {
       const ctx = canvas.getContext('2d')
       if (!ctx) return
       gameRenderer = new GameRenderer(ctx, gameId)
-      
-      // Initialize game
+
+    // Initialize game
       gameRenderer.init().catch((error) => {
         console.error('Failed to initialize game:', error)
       })
@@ -98,8 +98,8 @@ export function GameContainer({ gameId }: GameContainerProps) {
       window.removeEventListener('keydown', handleKeyDown)
       clearTimeout(hideTimer)
       if (gameRenderer) {
-        gameRenderer.cleanup()
-      }
+      gameRenderer.cleanup()
+    }
     }
   }, [gameId, router])
 
