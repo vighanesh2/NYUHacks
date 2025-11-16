@@ -56,3 +56,17 @@ frontend/next-env.d.ts
 *.swo
 *~
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+backend/venv/
+backend/env/
+backend/__pycache__/
+backend/**/__pycache__/
+
