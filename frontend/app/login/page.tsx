@@ -58,7 +58,7 @@ function LoginForm() {
         }}></div>
         <div className="relative z-10 max-w-md">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">NYU Hacks Arcade</h1>
+            <h1 className="text-4xl font-bold text-gray-800 mb-2">SATistics</h1>
             <p className="text-gray-600">Your SAT Learning Platform</p>
           </div>
           {/* Placeholder for login image - you can add an actual image later */}
@@ -78,7 +78,7 @@ function LoginForm() {
       <div className="w-full lg:w-5/12 xl:w-4/12 flex items-center justify-center p-4 bg-white">
         <div className="w-full max-w-md">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome to NYU Hacks Arcade</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome to SATistics</h1>
             <p className="text-gray-600">Your Admin Dashboard</p>
           </div>
 
@@ -172,7 +172,7 @@ function LoginForm() {
 
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
-              New to NYU Hacks Arcade?{' '}
+              New to SATistics?{' '}
               <Link href="/signup" className="text-blue-600 hover:text-blue-800 font-medium">
                 Create an account
               </Link>

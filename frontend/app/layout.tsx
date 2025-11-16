@@ -9,8 +9,8 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'NYU Hacks Arcade',
-  description: 'Classic arcade games collection',
+  title: 'SATistics',
+  description: 'SATistics - SAT practice games and analytics dashboard',
 }
 
 export default function RootLayout({

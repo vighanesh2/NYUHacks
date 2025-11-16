@@ -1,6 +1,6 @@
-# Frontend - NYU Hacks Arcade
+## Frontend - SATistics
 
-Next.js frontend application for the NYU Hacks Arcade. All games are built with Three.js for 3D graphics.
+Next.js frontend application for SATistics, an SAT practice arcade with analytics. All games are built with Three.js for 3D graphics.
 
 ## Project Structure
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Vercel Deployment Script for NYU Hacks Arcade Frontend
+# Vercel Deployment Script for SATistics Frontend
 
 echo "🚀 Starting Vercel Deployment..."
 echo ""
