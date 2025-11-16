@@ -3,26 +3,24 @@ Supabase client for AI agent integration
 Provides high-level operations for the learning agent
 """
 
-from supabase import create_client, Client
+from supabase import Client
 from typing import List, Dict, Optional
 from datetime import datetime
-from config import SUPABASE_URL, SUPABASE_SERVICE_KEY
-
-# Initialize Supabase client
-try:
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
-    print("✅ Supabase client initialized")
-except Exception as e:
-    print(f"❌ Supabase init failed: {e}")
-    raise
+from src.utils.database import Database
 
 class SupabaseAgentOps:
     """Supabase operations for the AI learning agent"""
     
     @staticmethod
+    def _get_client() -> Client:
+        """Get Supabase client"""
+        return Database.get_client()
+    
+    @staticmethod
     def get_user_performance(user_id: str) -> Dict:
         """Get user performance stats from Supabase"""
         try:
+            supabase = SupabaseAgentOps._get_client()
             # Get user stats
             stats_response = supabase.table('user_stats').select('*').eq('user_id', user_id).execute()
             
@@ -47,6 +45,7 @@ class SupabaseAgentOps:
     def get_topic_performance(user_id: str) -> Dict[str, Dict]:
         """Get performance breakdown by topic"""
         try:
+            supabase = SupabaseAgentOps._get_client()
             # Get all question attempts for user
             response = supabase.table('question_attempts').select(
                 'topic, is_correct, time_spent'
@@ -88,6 +87,7 @@ class SupabaseAgentOps:
     def save_game_session(user_id: str, game_data: Dict) -> Optional[str]:
         """Save a game session to Supabase"""
         try:
+            supabase = SupabaseAgentOps._get_client()
             session_data = {
                 'user_id': user_id,
                 'game_id': game_data['game_type'],
@@ -117,6 +117,7 @@ class SupabaseAgentOps:
             return False
         
         try:
+            supabase = SupabaseAgentOps._get_client()
             attempt_data = []
             for attempt in attempts:
                 attempt_data.append({
@@ -142,6 +143,7 @@ class SupabaseAgentOps:
     def update_user_stats(user_id: str, game_data: Dict) -> bool:
         """Update user statistics in Supabase"""
         try:
+            supabase = SupabaseAgentOps._get_client()
             # Get current stats
             response = supabase.table('user_stats').select('*').eq('user_id', user_id).execute()
             

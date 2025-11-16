@@ -2,9 +2,9 @@ from openai import OpenAI
 from typing import List, Dict
 import json
 import time
-from config import OPENROUTER_API_KEY
+from src.config import OPENROUTER_API_KEY
 from duckduckgo_search import DDGS
-from supabase_client import SupabaseAgentOps
+from src.services.supabase_agent_ops import SupabaseAgentOps
 
 # Use OpenRouter (compatible with OpenAI API)
 client = OpenAI(
