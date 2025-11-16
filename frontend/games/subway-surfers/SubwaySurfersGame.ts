@@ -127,9 +127,10 @@ export class SubwaySurfersGame extends BaseGame {
   constructor(
     width: number,
     height: number,
+    canvas?: HTMLCanvasElement,
     questions?: QuestionsData
   ) {
-    super(width, height)
+    super(width, height, canvas || document.createElement('canvas'))
     this.questions = questions || null
     this.gltfLoader = new GLTFLoader()
     this.fbxLoader = new FBXLoader()
@@ -1065,6 +1066,7 @@ export class SubwaySurfersGame extends BaseGame {
     }
   }
 
+<<<<<<< HEAD
   render(ctx: CanvasRenderingContext2D): void {
     const canvas = ctx.canvas
 
@@ -1795,6 +1797,21 @@ export class SubwaySurfersGame extends BaseGame {
       SubwaySurfersGame.registerAudio(die)
       this.dyingSfx = die
     } catch {}
+=======
+  render(ctx: CanvasRenderingContext2D | null): void {
+    if (!ctx) return
+    // Draw placeholder
+    ctx.fillStyle = '#1a1a1a'
+    ctx.fillRect(0, 0, this.width, this.height)
+    
+    ctx.fillStyle = '#fff'
+    ctx.font = '24px monospace'
+    ctx.textAlign = 'center'
+    ctx.fillText('Subway Surfers', this.width / 2, this.height / 2 - 20)
+    ctx.font = '16px monospace'
+    ctx.fillText('Coming Soon...', this.width / 2, this.height / 2 + 20)
+    ctx.textAlign = 'left'
+>>>>>>> origin/main
   }
 
   handleInput(key: string): void {

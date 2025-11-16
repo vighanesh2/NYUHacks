@@ -2,6 +2,18 @@ import { Game } from '@/games/subway-surfers/types/game'
 
 export const games: Game[] = [
   {
+    id: 'whackamole',
+    name: 'SAT Whack-A-Mole',
+    description: 'Whack the mole with the correct SAT answer!',
+    status: 'available',
+  },
+  {
+    id: 'carnival',
+    name: 'SAT Balloon Pop',
+    description: 'Pop balloons to answer SAT questions - 3 shots per question!',
+    status: 'available',
+  },
+  {
     id: 'subway-surfers',
     name: 'Subway Surfers',
     description: 'Endless runner - dodge obstacles and collect coins!',
@@ -11,12 +23,6 @@ export const games: Game[] = [
     id: 'squid-game',
     name: 'Squid Game',
     description: 'Survive the challenges inspired by the popular series!',
-    status: 'available',
-  },
-  {
-    id: 'mario',
-    name: 'Mario',
-    description: 'Classic platformer - jump, run, and collect coins!',
     status: 'available',
   },
   {
