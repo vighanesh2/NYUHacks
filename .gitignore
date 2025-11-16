@@ -44,3 +44,12 @@ frontend/next-env.d.ts
 *.swo
 *~
 
+# Python (backend)
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.db
+backend/.env
+*.egg-info/
+
