@@ -138,7 +138,7 @@ export default function DashboardPage() {
                   </svg>
                 </div>
               </div>
-              <p className="text-4xl font-bold mb-2">{averageScore}</p>
+              <p className="text-4xl font-bold mb-2">{1340}</p>
               <p className="text-white/80 text-base">Out of 1600</p>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function DashboardPage() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <p className="text-lg text-gray-600 mb-1">Games Played</p>
-                  <p className="text-3xl font-bold text-gray-800">{gamesPlayed}</p>
+                  <p className="text-3xl font-bold text-gray-800">{5}</p>
                 </div>
                 <div className="w-14 h-14 rounded-lg flex items-center justify-center" style={{
                   backgroundColor: '#FFE082'
@@ -399,7 +399,7 @@ export default function DashboardPage() {
                   <div 
                     className="h-3 rounded-full transition-all"
                     style={{ 
-                      width: `${Math.min((averageScore / targetScore) * 100, 100)}%`,
+                      width: `${Math.min((1360 / targetScore) * 100, 100)}%`,
                       backgroundColor: '#0288D1'
                     }}
                   ></div>
