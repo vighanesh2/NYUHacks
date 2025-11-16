@@ -22,10 +22,10 @@ This is a monorepo containing both frontend and backend code:
 
 ## Games
 
-- 🚇 **Subway Surfers** - Endless runner - dodge obstacles and collect coins!
-- 🦑 **Squid Game** - Survive the challenges inspired by the popular series!
-- 🍄 **Mario** - Classic platformer - jump, run, and collect coins!
-- 👻 **Pac-Man** - Classic maze game - eat dots and avoid ghosts!
+-  **Subway Surfers** - Endless runner - dodge obstacles and collect coins!
+-  **Squid Game** - Survive the challenges inspired by the popular series!
+- **Mario** - Classic platformer - jump, run, and collect coins!
+- **Pac-Man** - Classic maze game - eat dots and avoid ghosts!
 
 ## Getting Started
 
