@@ -1,5 +1,12 @@
 import { GameState } from '@/types/game'
 
+/**
+ * Base Game Class
+ * All games extend this class and use Three.js for 3D rendering.
+ * 
+ * Note: The render method currently uses Canvas 2D for placeholders,
+ * but will be updated to use Three.js WebGLRenderer in implementations.
+ */
 export abstract class BaseGame {
   protected state: GameState = {
     score: 0,
@@ -21,6 +28,7 @@ export abstract class BaseGame {
 
   cleanup(): void {
     // Override in subclasses if needed
+    // Clean up Three.js resources (scenes, geometries, materials, etc.)
   }
 
   protected getState(): GameState {
