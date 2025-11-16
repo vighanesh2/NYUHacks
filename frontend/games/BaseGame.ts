@@ -24,7 +24,7 @@ export abstract class BaseGame {
 
   abstract init(): void
   abstract update(deltaTime: number): void
-  abstract render(ctx: CanvasRenderingContext2D): void
+  abstract render(ctx: CanvasRenderingContext2D | null): void
   abstract handleInput(key: string): void
 
   cleanup(): void {
