@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import { GameRenderer } from '@/games/GameRenderer'
 import { WhackAMoleGameContainer } from './WhackAMoleGameContainer'
 import { CarnivalGameContainer } from './CarnivalGameContainer'
+import ZombieGameContainer from './ZombieGameContainer'
 
 interface GameContainerProps {
   gameId: string
@@ -13,6 +14,10 @@ export function GameContainer({ gameId }: GameContainerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   // Render specific game containers for Three.js games
+  if (gameId === 'zombie') {
+    return <ZombieGameContainer />
+  }
+
   if (gameId === 'whackamole') {
     return <WhackAMoleGameContainer gameId={gameId} />
   }
