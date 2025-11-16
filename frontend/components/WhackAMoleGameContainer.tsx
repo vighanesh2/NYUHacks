@@ -51,9 +51,17 @@ export function WhackAMoleGameContainer({ gameId }: WhackAMoleGameContainerProps
         setGameState(state)
       }
 
-      game.onGameOver = (analyticsData) => {
+      game.onGameOver = async (analyticsData) => {
         setAnalytics(analyticsData)
         setGameOver(true)
+        
+        // Save score to database via FastAPI
+        try {
+          const { apiClient } = await import('@/lib/api/client')
+          await apiClient.saveScore('whackamole', analyticsData)
+        } catch (error) {
+          console.error('Error saving score:', error)
+        }
       }
 
       game.init()
