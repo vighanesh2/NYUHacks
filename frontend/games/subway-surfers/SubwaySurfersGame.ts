@@ -1066,8 +1066,8 @@ export class SubwaySurfersGame extends BaseGame {
     }
   }
 
-<<<<<<< HEAD
-  render(ctx: CanvasRenderingContext2D): void {
+  render(ctx: CanvasRenderingContext2D | null): void {
+    if (!ctx) return
     const canvas = ctx.canvas
 
     // Initialize Three.js on first render
@@ -1797,21 +1797,6 @@ export class SubwaySurfersGame extends BaseGame {
       SubwaySurfersGame.registerAudio(die)
       this.dyingSfx = die
     } catch {}
-=======
-  render(ctx: CanvasRenderingContext2D | null): void {
-    if (!ctx) return
-    // Draw placeholder
-    ctx.fillStyle = '#1a1a1a'
-    ctx.fillRect(0, 0, this.width, this.height)
-    
-    ctx.fillStyle = '#fff'
-    ctx.font = '24px monospace'
-    ctx.textAlign = 'center'
-    ctx.fillText('Subway Surfers', this.width / 2, this.height / 2 - 20)
-    ctx.font = '16px monospace'
-    ctx.fillText('Coming Soon...', this.width / 2, this.height / 2 + 20)
-    ctx.textAlign = 'left'
->>>>>>> origin/main
   }
 
   handleInput(key: string): void {

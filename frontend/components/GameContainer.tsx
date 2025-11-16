@@ -23,12 +23,12 @@ export function GameContainer({ game }: GameContainerProps) {
   const [loadingMessage, setLoadingMessage] = useState('Initializing...')
 
   // Render specific game containers for Three.js games
-  if (gameId === 'zombie') {
+  if (game.id === 'zombie') {
     return <ZombieGameContainer />
   }
 
-  if (gameId === 'whackamole') {
-    return <WhackAMoleGameContainer gameId={gameId} />
+  if (game.id === 'whackamole') {
+    return <WhackAMoleGameContainer gameId={game.id} />
   }
 
   if (game.id === 'carnival') {
