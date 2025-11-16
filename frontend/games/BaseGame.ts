@@ -39,6 +39,23 @@ export abstract class BaseGame {
   protected setState(updates: Partial<GameState>): void {
     this.state = { ...this.state, ...updates }
   }
+
+  // Public helpers for pause control
+  public pause(): void {
+    this.state.isPaused = true
+  }
+
+  public resume(): void {
+    this.state.isPaused = false
+  }
+
+  public togglePause(): void {
+    this.state.isPaused = !this.state.isPaused
+  }
+
+  public isPaused(): boolean {
+    return this.state.isPaused
+  }
 }
 
 // DO NOT add any exports or imports of game classes here!

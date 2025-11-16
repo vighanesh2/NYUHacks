@@ -98,9 +98,11 @@ export class GameRenderer {
     }
 
     this.keyupHandler = (e: KeyboardEvent) => {
-      // Handle key release for games that need it (like squid game)
+      // Handle key release for games that need it (like squid game and subway-surfers)
       if ('handleKeyRelease' in (this.game as any)) {
         (this.game as any).handleKeyRelease(e.key)
+      } else if (this.game && typeof (this.game as any).handleKeyUp === 'function') {
+        (this.game as any).handleKeyUp(e.key)
       }
     }
 
@@ -121,6 +123,17 @@ export class GameRenderer {
             gameObjects.camera.aspect = width / height
             gameObjects.camera.updateProjectionMatrix()
           }
+        } else if (this.gameId === 'subway-surfers' && 'renderer' in (this.game as any)) {
+          const game = this.game as any
+          if (game.renderer) {
+            const width = this.canvas.width || window.innerWidth
+            const height = this.canvas.height || window.innerHeight
+            game.renderer.setSize(width, height)
+            if (game.camera) {
+              game.camera.aspect = width / height
+              game.camera.updateProjectionMatrix()
+            }
+          }
         }
       }
     }
@@ -131,6 +144,11 @@ export class GameRenderer {
     } else {
       window.addEventListener('resize', handleResize)
     }
+  }
+
+  // Expose pause toggle for UI controls
+  togglePause() {
+    this.game?.togglePause()
   }
 
   private gameLoop = (currentTime: number) => {
@@ -164,6 +182,9 @@ export class GameRenderer {
     // Render game
     if (this.gameId === 'squid-game') {
       // Three.js games handle their own rendering
+      this.game.render(null as any) // Pass null, game handles Three.js rendering
+    } else if (this.gameId === 'subway-surfers') {
+      // Subway-surfers handles its own Three.js rendering
       this.game.render(null as any) // Pass null, game handles Three.js rendering
     } else if (this.ctx) {
       this.game.render(this.ctx)
